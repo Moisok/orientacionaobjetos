@@ -51,6 +51,7 @@ public class Persona {
 		this.apellido=apellido;
 	}
 	
+
 	public void setedad (int edad) {
 		this.edad=edad;
 	}
