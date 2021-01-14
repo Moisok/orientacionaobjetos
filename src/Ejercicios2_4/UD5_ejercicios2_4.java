@@ -24,7 +24,7 @@ public class UD5_ejercicios2_4 {
 		double calcula_iva2 = pieza2.precio * pieza2.iva / 100;
 		System.out.println ("Quedan: " + pieza2.stock);
 		System.out.println ("Total: " + (pieza2.precio + calcula_iva2) + "€");
-		/*Prueba*/
+		/*Pruebyhgbuhbujhbuhgba*/
 		
 	}
 
