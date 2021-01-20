@@ -88,28 +88,33 @@ public class Articulo {
 	
 	/*Ventas*/
 	
-	public int ventas (int ventas1) {
+	public boolean ventas (int ventas1) {
 		
-		int hay = 0;
+		boolean hay = false;
 		
-		int x = this.stock;
-		
-		if (ventas1 <= x) {
-			hay = 1;
-			this.stock = x - ventas1;
+		if (ventas1 <= this.stock) {
+			hay = true;
 		}
 		
 		else {
-			hay = 0;
+			hay = false;
 		}
 		
 			return hay;
 	}
 	
-	/*Almacenar*/
-	public void almacenar(int almacenar) {
-		this.stock=almacenar;
+	/*Restar stock*/
+	public void restar (int ventas) {
+		this.stock=this.stock-ventas;
 	}
-}
+	
+	/*Almacenar articulo (Setter cuadriple)*/
+	public void actualizar (String nombre, double precio, int iva, int stock) {
+		this.nombre=nombre;
+		this.precio=precio;
+		this.iva=iva;
+		this.stock=stock;
+	}
+}	
 
 
