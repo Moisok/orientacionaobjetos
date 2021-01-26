@@ -20,24 +20,12 @@ public class CuentaBancaria {
 
 	private int nMovimientos = 0;
 	
-	private static boolean validarIBAN;
+	private boolean validarIBAN;
 	
 	public CuentaBancaria (String iban, String titular) {
 		
 		this.iban=iban;
 		
-		/*if (!iban.matches("^[A-Z]{2}\\d(22)")) {
-			System.err.println(" ");
-			
-			System.err.println(" ");
-		}
-		
-		else {
-			System.err.println(" ");
-			System.err.println("EL NUMERO DE IBAN NO ES CORRECTO");
-			System.err.println(" ");
-		}*/
-	
 		this.titular=titular;
 	}
 	
@@ -56,12 +44,6 @@ public class CuentaBancaria {
 
 	/*Funcion para los ingresos*/
 	public void ingresos (float cantidad) {
-		
-		if (cantidad >= 3000) {
-		System.out.println (" ");
-		System.err.println ("AVISO: NOTIFICACION A HACIENDA");
-		System.out.println (" ");
-		}
 		this.saldo = this.saldo + cantidad;
 		this.movimientos[nMovimientos]=cantidad;
 		nMovimientos++;
@@ -72,10 +54,7 @@ public class CuentaBancaria {
 	public void retirada (float cantidad) {
 		
 		if ((this.saldo - cantidad) < -50) {
-			System.out.println (" ");
 			System.err.println ("No hay suficiente Saldo");
-			System.out.println (" ");
-			
 		}
 		
 		else {
@@ -92,7 +71,7 @@ public class CuentaBancaria {
 	public void datos() {
 		System.out.println (" ");
 		System.out.println ("El titular de la cuenta es: " + this.titular);
-		System.out.println ("Su Nº de iban es: " + this.iban);
+		System.out.println ("Su numero de iban es: " + this.iban);
 		System.out.println ("Su saldo disponible es de " + this.saldo);
 		System.out.println (" ");
 	}
@@ -104,8 +83,23 @@ public class CuentaBancaria {
 		System.out.println (" ");
 		
 		for (int i = 0; i<this.nMovimientos; i++) {
-		System.out.println ("Movimiento" +(i+1) + ": "+ this.movimientos[i]+ "€");
+		System.out.println ("Movimiento " +(i+1) + " : "+ this.movimientos[i]);
 		}
+		
+		
+	}
+	/*Funcion para validar el IBAN*/
+	public boolean validamiento () {
+		validarIBAN = this.validarIBAN;
+		if (iban.matches("^[A-Z]{2}\\d{22}")) {
+			validarIBAN = true;
+		}
+		else {
+			validarIBAN = false;
+		}
+		
+		return validarIBAN;
+		
 	}
 }
 	
