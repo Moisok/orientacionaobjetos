@@ -14,7 +14,7 @@ public class Deparbank {
 		String continuar;
 		int ingreso;
 		int retirada;
-		float saldo = 0;;
+		float cantidad = 0;;
 		
 		Scanner teclado = new Scanner (System.in);
 		
@@ -72,7 +72,8 @@ public class Deparbank {
 			System.out.println ("Saldo disponible: " + cuenta.getSaldo() + "€");
 			System.out.println ("Introduce cantidad a ingresar: " );
 			System.out.print ("INGRESE(€): ");
-			cuenta.ingresos(saldo);
+			cantidad = teclado.nextFloat();
+			cuenta.ingresos(cantidad);
 			System.out.println ("Tienes un saldo actual de: " + cuenta.getSaldo() + "€");
 			System.out.println (" ");
 			System.out.println (" ");
@@ -87,7 +88,8 @@ public class Deparbank {
 			System.out.println ("Saldo disponible: " + cuenta.getSaldo() + "€");
 			System.out.println ("Introduce cantidad a retirar: " );
 			System.out.print ("RETIRE(€): ");
-			cuenta.retirada(saldo);
+			cantidad = teclado.nextFloat();
+			cuenta.retirada(cantidad);
 			System.out.println ("Tienes un saldo actual de: " + cuenta.getSaldo() + "€");
 			System.out.println (" ");
 			System.out.println (" ");
@@ -101,6 +103,7 @@ public class Deparbank {
 			opcion = 0;
 			System.out.println (" ");
 			cuenta.movimientos();
+			System.out.println ("Saldo disponible: " + cuenta.getSaldo() + "€");
 			System.out.println (" ");
 			System.out.println ("Introduzca 'c' para continuar");
 			System.out.print ("SELECCION: ");
@@ -113,10 +116,6 @@ public class Deparbank {
 	  }	
 	}
   }
-	
-	
-	
-	
 	
 	public static void main (String [] args){
 		
@@ -141,13 +140,14 @@ public class Deparbank {
 		if (opcion > 3) {
 			System.err.println ("Opcion no Valida");
 		}
-		
+	
 		switch (opcion) {
 		
 		case 1:
 			
 			CuentaBancaria cuenta1 = new CuentaBancaria ("ES2165005849555659897474","Manolo");
 			menu(cuenta1);
+			
 			break;
 			
 		case 2:

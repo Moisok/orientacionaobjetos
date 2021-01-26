@@ -14,9 +14,11 @@ public class CuentaBancaria {
 	
 	private float saldo;
 	
-	private int [] movimientos = new int [100];
+	private final int max = 100;
+	
+	private float movimientos [] = new float [max];
 
-	private int nMovimientos;
+	private int nMovimientos = 0;
 	
 	private static boolean validarIBAN;
 	
@@ -42,46 +44,40 @@ public class CuentaBancaria {
 	}
 
 	/*Funcion para los ingresos*/
-	public float ingresos (float saldo) {
-		float ingreso = 0;
-		ingreso = teclado.nextFloat();
-		if (ingreso >= 3000) {
+	public void ingresos (float cantidad) {
+		
+		if (cantidad >= 3000) {
 		System.out.println (" ");
 		System.err.println ("AVISO: NOTIFICACION A HACIENDA");
 		System.out.println (" ");
 		}
-		this.saldo = this.saldo + ingreso;
+		this.saldo = this.saldo + cantidad;
+		this.movimientos[nMovimientos]=cantidad;
 		nMovimientos++;
-		System.out.println (nMovimientos);
-		return saldo;
 	}
 	
-	/*Funcion para retirar dinero*/
 	
-	public float retirada (float saldo) {
-		float retirada = 0;
-		retirada = teclado.nextFloat();
-		if (retirada >= 3000) {
-			System.out.println (" ");
-			System.err.println ("AVISO: NOTIFICACION A HACIENDA");
-			System.out.println (" ");
-			}
-		this.saldo = this.saldo - retirada;
-		if (this.saldo < -50) {
-			System.out.println (" ");
+	/*Funcion para retirar dinero*/
+	public void retirada (float cantidad) {
+		
+		if ((this.saldo - cantidad) < -50) {
 			System.out.println (" ");
 			System.err.println ("No hay suficiente Saldo");
 			System.out.println (" ");
-			System.out.println (" ");
-			this.saldo = this.saldo + retirada;
-			return saldo;
+			
 		}
-		nMovimientos++;
-		System.out.println (nMovimientos);
-		return saldo;
+		
+		else {
+			
+			this.saldo = this.saldo - cantidad;
+			this.movimientos[nMovimientos]=-cantidad;
+			this.nMovimientos++;
+		}
+
 	}
 
 	/*Funcion para ver los datos*/
+	
 	public void datos() {
 		System.out.println (" ");
 		System.out.println ("El titular de la cuenta es: " + this.titular);
@@ -90,16 +86,16 @@ public class CuentaBancaria {
 		System.out.println (" ");
 	}
 	
+	/*Funcion para ver los movimientos*/
+	
 	public void movimientos () {
-		System.out.println ("Has realizado " + nMovimientos);
-		System.out.println (" ");
-		for (int i = 0; i<this.nMovimientos; i++) {
-			System.out.println ((i+1) + ": " + this.movimientos[this.nMovimientos]);
-		}
 		
+		System.out.println (" ");
+		
+		for (int i = 0; i<this.nMovimientos; i++) {
+		System.out.println ("Movimiento" +(i+1) + ": "+ this.movimientos[i]+ "€");
+		}
 	}
-	
-	
 }
 	
 	
