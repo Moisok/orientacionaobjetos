@@ -145,7 +145,7 @@ public class Deparbank {
 		
 		case 1:
 			
-			CuentaBancaria cuenta1 = new CuentaBancaria ("ES2165005849555659897474","Manolo");
+			CuentaBancaria cuenta1 = new CuentaBancaria ("ES747","Manolo");
 			menu(cuenta1);
 			
 			break;

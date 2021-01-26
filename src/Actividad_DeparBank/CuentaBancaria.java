@@ -26,8 +26,19 @@ public class CuentaBancaria {
 		
 		this.iban=iban;
 		
-		this.titular=titular;
+		/*if (!iban.matches("^[A-Z]{2}\\d(22)")) {
+			System.err.println(" ");
+			
+			System.err.println(" ");
+		}
 		
+		else {
+			System.err.println(" ");
+			System.err.println("EL NUMERO DE IBAN NO ES CORRECTO");
+			System.err.println(" ");
+		}*/
+	
+		this.titular=titular;
 	}
 	
 	/*Construccion de getters*/
