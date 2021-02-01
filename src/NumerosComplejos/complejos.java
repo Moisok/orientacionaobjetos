@@ -6,6 +6,9 @@ public class complejos {
 	
 	private double im;
 	
+	private complejos vector [] = new complejos [100];
+	
+	
 	
 	public complejos (double rel, double im) {
 		
@@ -13,9 +16,18 @@ public class complejos {
 		
 		this.im= im;
 	}
+
 	
+	public double getRel () {
+		return rel;
+	}
+	
+	public double getIm () {
+		return im;
+	}
 	
 	/*Sumar*/
+	
 	public String suma (complejos c) {
 		
 		String solucion;
@@ -25,12 +37,14 @@ public class complejos {
 		double y = this.im + c.im;
 		
 		solucion =  x + " + " + y + "i";
+
 		
 		return solucion;
 		
 	}
 	
 	/*Resta*/
+	
 	public String resta (complejos c) {
 		
 		String solucion;
@@ -46,6 +60,7 @@ public class complejos {
 	}
 	
 	/*Multiplicacion*/
+	
 	public String multiplicar (complejos c) {
 		
 		String solucion;
@@ -63,6 +78,7 @@ public class complejos {
 	}
 	
 	/*Division*/
+	
 	public String division (complejos c) {
 		
 		String solucion;
@@ -82,15 +98,18 @@ public class complejos {
 	}
 	
 	/*Imprimir*/
+	
 	public void imprimir () {
 		System.out.println ("El primer numero es: " + this.rel);
 		System.out.println ("El segundo numero es: " + this.im + "i");
 		System.out.println (" ");
 	}
 	
+	
+}
 
 				
-}
+
 	
-	
+	/*cv[i]=tal*/
 
