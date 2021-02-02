@@ -22,8 +22,6 @@ public class NumerosComplejos {
 		
 		int opcion = 0;
 		
-		
-		System.out.println ("Bienvenido a la calculadora de numeros complejos");
 		System.out.println ("Introduce un numero doble");
 		System.out.print ("INTRODUCE: ");
 		numero1 = teclado.nextDouble();
@@ -147,6 +145,9 @@ public class NumerosComplejos {
 		case 9:
 			
 			/*Multiplica vector*/
+			operaIm = 1;
+			
+			operaRel = 1;
 			
 			System.out.println(" ");
 			System.out.println("Multiplicar");
@@ -156,11 +157,11 @@ public class NumerosComplejos {
 			
 			for (int i=0;i<cv.length;i++) {
 				operaRel= cv[i].getRel() * operaRel;
-				operaRel++;
+
 			}
 			for (int i=0;i<cv.length;i++) {
 				operaIm= cv[i].getIm() * operaIm;
-				operaIm++;
+
 			}
 			System.out.println ("La multiplicacion del vector es: " + operaRel + " x " + operaIm + " i ");
 			operaRel= 0;
