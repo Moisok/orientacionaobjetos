@@ -9,36 +9,20 @@ public class articulo {
 	
 	/*Variables*/
 	
-	private int codigo;
+	private String codigo = "LIBRE";
 	
 	private String descripcion;
 	
-	private double pcompra;
+	private double precioDeCompra;
 	
-	private double pventa;
+	private double precioDeVenta;
 	
 	private int stock;
 	
 	
-	/*Constructor*/
-	
-	public articulo (int codigo, String descripcion, double pcompra, double pventa, int stock) {
-		
-		this.codigo= codigo;
-		
-		this.descripcion = descripcion;
-		
-		this.pcompra = pcompra;
-		
-		this.pventa = pventa;
-		
-		this.stock=stock;
-		
-	}
-	
 	/*Getters*/
 	
-	public int getCodido() {
+	public String getCodigo() {
 		return codigo;
 	}
 	
@@ -46,12 +30,12 @@ public class articulo {
 		return descripcion;
 	}
 	
-	public double getPcompra () {
-		return pcompra;
+	public double getprecioDeCompra () {
+		return precioDeCompra;
 	}
 	
-	public double getPventa() {
-		return pventa;
+	public double getprecioDeVenta() {
+		return precioDeVenta;
 	}
 	
 	public int getStock() {
@@ -60,7 +44,7 @@ public class articulo {
 	
 	/*Setters*/
 	
-	public int setCodigo (int codigo) {
+	public String setCodigo (String codigo) {
 		this.codigo=codigo;
 		return codigo;
 	}
@@ -70,14 +54,14 @@ public class articulo {
 		return descripcion;
 	}
 	
-	public double setPcompra (double pcompra) {
-		this.pcompra=pcompra;
-		return pcompra;
+	public double setprecioDeCompra (double precioDeCompra) {
+		this.precioDeCompra=precioDeCompra;
+		return precioDeCompra;
 	}
 	
-	public double setPventa(double pventa) {
-		this.pventa=pventa;
-		return pventa;
+	public double setprecioDeVenta(double precioDeVenta) {
+		this.precioDeVenta=precioDeVenta;
+		return precioDeVenta;
 	}
 	
 	public int setStock (int stock) {
@@ -85,5 +69,21 @@ public class articulo {
 		return stock;	
 	}
 	
+	
+
+	/*Cadena de string*/
+
+	public String toString() {
+	String cadena =
+	"-------------------------------------------------";
+	cadena += "\nCodigo: " + this.codigo;
+	cadena += "\nDescripcion: " + this.descripcion;
+	cadena += "\nPrecio de compra: " + this.precioDeCompra;
+	cadena += "\nPrecio de venta: " + this.precioDeVenta;
+	cadena += "\nStock: " + this.stock + " unidades";
+	cadena += "\n-------------------------------------------------";
+	return cadena;
+	}
+
 	
 }
