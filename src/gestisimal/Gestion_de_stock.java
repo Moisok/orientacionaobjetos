@@ -1,14 +1,4 @@
-/*El menú del programa debe tener, al menos, las siguientes opciones:
-1. Listado
-2. Alta
-3. Baja
-4. Modificación
-5. Entrada de mercancía
-6. Salida de mercancía
-7. Salir
-j=articulo[i].setDescripcion()=3 (EJEMPLO)
-La entrada y salida de mercancía supone respectivamente el incremento y decremento de stock de un determinado artículo. 
-Hay que controlar que no se pueda sacar más mercancía de la que hay en el almacén.*/
+/*Gestion de almacen y stock creado por Moises sepulveda Segarra*/
 
 package gestisimal;
 
@@ -25,7 +15,7 @@ public class Gestion_de_stock {
 		
 		int numArticulos;
 		
-		String IntroCodigo = "LIBRE";
+		String IntroCodigo;
 		
 		String IntroDescripcion;
 		
@@ -35,44 +25,171 @@ public class Gestion_de_stock {
 		
 		int IntroStock;
 		
+		int opcion = 0;
+		
+		int select;
+		
 		articulo articulos[] = new articulo [3];
 		
 		/*Primer array lo llenamos con "LIBRE" en la parte del codigo*/
 		for (int i=0;i<articulos.length;i++) {
 		articulos[i]= new articulo();
 		}
-	
-		/*Este array es para ir metiendo los datos en caso de que este "LIBRE" el hueco*/
-		for (int i=0;i<3;i++) {
 		
-			if (IntroCodigo.equals(articulos[i].getCodigo())){
-				System.out.println ("Inserta Codigo");
+		
+		/*Comienza el menu*/
+		while (opcion < 7) {
+			System.out.println ("1. Listado");
+			System.out.println ("2. Alta");
+			System.out.println ("3. Baja");
+			System.out.println ("4. Modificación");
+			System.out.println ("5. Entrada de stock");
+			System.out.println ("6. Salida de stock");
+			System.out.println ("7. Salir");
+			
+			opcion = teclado.nextInt();
+			
+			switch (opcion) {
+			
+			/*Mostrar listado*/
+			
+			case 1: 
+				for (int i=0; i<articulos.length; i++) {
+					System.out.println(articulos[i].toString());
+				}
+				break;
+				
+			/*Introducir mercancia*/
+				
+			case 2: 
+					System.out.println ("Inserta Codigo");
+					IntroCodigo = teclado.next();
+					
+					System.out.println ("Inserta Descripcion");
+					IntroDescripcion = teclado.next();
+					
+					System.out.println ("Inserta precio de compra");
+					IntroPrecioDeCompra = teclado.nextDouble();
+					
+					System.out.println ("Inserta precio de venta");
+					IntroPrecioDeVenta = teclado.nextDouble();
+				
+					int i= 0;
+					
+					while (!articulos[i].getCodigo().equals("LIBRE")){
+						
+						i++;
+						
+					}
+						
+						articulos[i].setCodigo(IntroCodigo);
+						
+						
+						articulos[i].setDescripcion(IntroDescripcion);
+						
+						
+						articulos[i].setprecioDeCompra (IntroPrecioDeCompra);
+						
+						
+						articulos[i].setprecioDeVenta (IntroPrecioDeVenta);
+
+				break;
+				
+			/*Dar de baja mercancia (Dar de baja por codigo no por numero)*/
+				
+			case 3:	
+				System.out.println ("¿Que articulo quieres dar de baja? (COD DE ARTICULO)");
 				IntroCodigo = teclado.next();
-				articulos[i].setCodigo(IntroCodigo);
 				
-				System.out.println ("Inserta Descripcion");
-				IntroDescripcion = teclado.next();
-				articulos[i].setDescripcion(IntroDescripcion);
+				for (int j=0;j<articulos.length;j++) {
+					if (articulos[j].getCodigo().equals(IntroCodigo)) {
+						articulos[j]= new articulo();
+					}
+					else {
+						System.out.println ("No existe el codigo");
+					}
+				}
 				
-				System.out.println ("Inserta precio de compra");
-				IntroPrecioDeCompra = teclado.nextDouble();
-				articulos[i].setprecioDeCompra (IntroPrecioDeCompra);
+				break;
 				
-				System.out.println ("Inserta precio de venta");
-				IntroPrecioDeVenta = teclado.nextDouble();
-				articulos[i].setprecioDeVenta (IntroPrecioDeVenta);
+			/*Modificar articulo*/	
 				
-				System.out.println ("Inserta Stock");
-				IntroStock = teclado.nextInt();
-				articulos[i].setStock(IntroStock);
+			case 4:	
+				System.out.println ("¿Que articulo quieres modificar? (COD DE ARTICULO)");
+				IntroCodigo = teclado.next();
+				
+				for (int j=0;j<articulos.length;j++) {
+					if (articulos[j].getCodigo().equals(IntroCodigo)) {
+					System.out.println ("Inserta Codigo");
+					IntroCodigo = teclado.next();
+					articulos[j].setCodigo(IntroCodigo);
+					
+					System.out.println ("Inserta Descripcion");
+					IntroDescripcion = teclado.next();
+					articulos[j].setDescripcion(IntroDescripcion);
+					
+					System.out.println ("Inserta precio de compra");
+					IntroPrecioDeCompra = teclado.nextDouble();
+					articulos[j].setprecioDeCompra (IntroPrecioDeCompra);
+					
+					System.out.println ("Inserta precio de venta");
+					IntroPrecioDeVenta = teclado.nextDouble();
+					articulos[j].setprecioDeVenta (IntroPrecioDeVenta);
+					
+					articulos[j].setStock(0);
+					}
+				}
+				break;
+				
+			/*Meter mercancia*/
+			
+			case 5:
+				System.out.println ("¿Que articulo quieres introducir Stock? (COD DE ARTICULO)");
+				IntroCodigo = teclado.next();
+				for (int j=0;j<articulos.length;j++) {
+					if (articulos[j].getCodigo().equals(IntroCodigo)) {
+					System.out.println ("introduce mercancia");
+					IntroStock = teclado.nextInt();
+					articulos[j].setStock(IntroStock);
+					}
+				}
+	
+				break;
+			/*Sacar mercancia*/
+				
+			case 6:	
+				
+				System.out.println ("¿Que articulo quieres sacar Stock? (COD DE ARTICULO)");
+				IntroCodigo = teclado.next();
+				for (int j=0;j<articulos.length;j++) {
+					if (articulos[j].getCodigo().equals(IntroCodigo)) {
+					System.out.println ("introduce mercancia");
+					IntroStock = teclado.nextInt();
+						if (IntroStock < articulos[j].getStock()) {
+							/*Corregir esto*/
+						articulos[j].setStock(IntroStock) = articulos[j].setStock(IntroStock) - articulos[j].setStock(IntroStock);
+						}
+						else {
+							System.out.println ("No hay suficiente stock");
+						}
+					}	
+				}	
+				
+				
+				
+				
+			/*Salir del programa*/
+				
+			case 7:
+				System.out.println ("Gracias por usar el programa");
+				break;
 			}
 			
-		}
 		
-		/*Prueba para printarlo*/
-		System.out.println(articulos[0].toString());	
-		System.out.println(articulos[1].toString());
-		System.out.println(articulos[2].toString());
+/*FINAL*/
+			
+		}
 	}
+}	
 
-}
+
