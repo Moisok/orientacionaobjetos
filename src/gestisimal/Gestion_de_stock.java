@@ -23,13 +23,15 @@ public class Gestion_de_stock {
 		
 		double IntroPrecioDeVenta;
 		
-		int IntroStock;
+		int IntroStock = 0;
+		
+		int OutStock;
 		
 		int opcion = 0;
 		
 		int select;
 		
-		articulo articulos[] = new articulo [3];
+		articulo articulos[] = new articulo [100];
 		
 		/*Primer array lo llenamos con "LIBRE" en la parte del codigo*/
 		for (int i=0;i<articulos.length;i++) {
@@ -42,7 +44,7 @@ public class Gestion_de_stock {
 			System.out.println ("1. Listado");
 			System.out.println ("2. Alta");
 			System.out.println ("3. Baja");
-			System.out.println ("4. ModificaciÃ³n");
+			System.out.println ("4. Modificacion");
 			System.out.println ("5. Entrada de stock");
 			System.out.println ("6. Salida de stock");
 			System.out.println ("7. Salir");
@@ -53,9 +55,12 @@ public class Gestion_de_stock {
 			
 			/*Mostrar listado*/
 			
-			case 1: 
+			case 1:
+				
 				for (int i=0; i<articulos.length; i++) {
+					if (!articulos[i].getCodigo().equals("LIBRE")) {
 					System.out.println(articulos[i].toString());
+				}
 				}
 				break;
 				
@@ -98,24 +103,24 @@ public class Gestion_de_stock {
 			/*Dar de baja mercancia (Dar de baja por codigo no por numero)*/
 				
 			case 3:	
-				System.out.println ("Â¿Que articulo quieres dar de baja? (COD DE ARTICULO)");
+				System.out.println ("¿Que articulo quieres dar de baja? (COD DE ARTICULO)");
 				IntroCodigo = teclado.next();
 				
 				for (int j=0;j<articulos.length;j++) {
 					if (articulos[j].getCodigo().equals(IntroCodigo)) {
 						articulos[j]= new articulo();
+						break;
 					}
 					else {
 						System.out.println ("No existe el codigo");
+						break;
 					}
 				}
-				
 				break;
-				
 			/*Modificar articulo*/	
 				
 			case 4:	
-				System.out.println ("Â¿Que articulo quieres modificar? (COD DE ARTICULO)");
+				System.out.println ("¿Que articulo quieres modificar? (COD DE ARTICULO)");
 				IntroCodigo = teclado.next();
 				
 				for (int j=0;j<articulos.length;j++) {
@@ -144,7 +149,7 @@ public class Gestion_de_stock {
 			/*Meter mercancia*/
 			
 			case 5:
-				System.out.println ("Â¿Que articulo quieres introducir Stock? (COD DE ARTICULO)");
+				System.out.println ("¿Que articulo quieres introducir Stock? (COD DE ARTICULO)");
 				IntroCodigo = teclado.next();
 				for (int j=0;j<articulos.length;j++) {
 					if (articulos[j].getCodigo().equals(IntroCodigo)) {
@@ -159,22 +164,24 @@ public class Gestion_de_stock {
 				
 			case 6:	
 				
-				System.out.println ("Â¿Que articulo quieres sacar Stock? (COD DE ARTICULO)");
+				System.out.println ("¿Que articulo quieres sacar Stock? (COD DE ARTICULO)");
 				IntroCodigo = teclado.next();
 				for (int j=0;j<articulos.length;j++) {
 					if (articulos[j].getCodigo().equals(IntroCodigo)) {
 					System.out.println ("introduce mercancia");
-					IntroStock = teclado.nextInt();
-						if (IntroStock < articulos[j].getStock()) {
-							/*Corregir esto*/
-						articulos[j].setStock(IntroStock) = articulos[j].setStock(IntroStock) - articulos[j].setStock(IntroStock);
-						}
-						else {
-							System.out.println ("No hay suficiente stock");
-						}
+					OutStock = teclado.nextInt();
+					IntroStock = IntroStock - OutStock;
+					if (articulos[j].getStock() < OutStock) {
+						System.out.println ("No hay suficiente stock");
+					}
+					else {
+						articulos[j].setStock(IntroStock);
+							}
+
+					
 					}	
 				}	
-				
+				break;
 				
 				
 				
