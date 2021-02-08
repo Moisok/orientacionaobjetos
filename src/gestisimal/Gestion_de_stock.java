@@ -103,7 +103,7 @@ public class Gestion_de_stock {
 			/*Dar de baja mercancia (Dar de baja por codigo no por numero)*/
 				
 			case 3:	
-				System.out.println ("¿Que articulo quieres dar de baja? (COD DE ARTICULO)");
+				System.out.println ("Que articulo quieres dar de baja? (COD DE ARTICULO)");
 				IntroCodigo = teclado.next();
 				
 				for (int j=0;j<articulos.length;j++) {
@@ -120,7 +120,7 @@ public class Gestion_de_stock {
 			/*Modificar articulo*/	
 				
 			case 4:	
-				System.out.println ("¿Que articulo quieres modificar? (COD DE ARTICULO)");
+				System.out.println ("Que articulo quieres modificar? (COD DE ARTICULO)");
 				IntroCodigo = teclado.next();
 				
 				for (int j=0;j<articulos.length;j++) {
@@ -149,7 +149,7 @@ public class Gestion_de_stock {
 			/*Meter mercancia*/
 			
 			case 5:
-				System.out.println ("¿Que articulo quieres introducir Stock? (COD DE ARTICULO)");
+				System.out.println ("Que articulo quieres introducir Stock? (COD DE ARTICULO)");
 				IntroCodigo = teclado.next();
 				for (int j=0;j<articulos.length;j++) {
 					if (articulos[j].getCodigo().equals(IntroCodigo)) {
@@ -164,7 +164,7 @@ public class Gestion_de_stock {
 				
 			case 6:	
 				
-				System.out.println ("¿Que articulo quieres sacar Stock? (COD DE ARTICULO)");
+				System.out.println ("Que articulo quieres sacar Stock? (COD DE ARTICULO)");
 				IntroCodigo = teclado.next();
 				for (int j=0;j<articulos.length;j++) {
 					if (articulos[j].getCodigo().equals(IntroCodigo)) {
