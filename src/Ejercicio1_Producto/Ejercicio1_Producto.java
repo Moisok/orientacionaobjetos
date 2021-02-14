@@ -27,7 +27,11 @@ public class Ejercicio1_Producto {
 		
 		ArrayList<Producto> prods = new ArrayList<Producto>();
 		
+<<<<<<< HEAD
 		//3 Añadidos a la ArrayList
+=======
+		//3 Aï¿½adidos a la ArrayList
+>>>>>>> e7f4081737960b97015764d3e16851ac0822b23c
 		
 		prods.add(leche);
 		prods.add(cacao);
@@ -73,4 +77,8 @@ public class Ejercicio1_Producto {
 	}
 	
 	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e7f4081737960b97015764d3e16851ac0822b23c

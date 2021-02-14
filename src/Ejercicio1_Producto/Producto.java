@@ -29,4 +29,8 @@ public class Producto {
 		this.cantidad = cantidad;
 	}
 	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e7f4081737960b97015764d3e16851ac0822b23c
