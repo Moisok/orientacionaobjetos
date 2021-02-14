@@ -24,7 +24,6 @@ public class Ejercicio1_Producto {
 		
 		//2 ArrayList
 		
-		
 		ArrayList<Producto> prods = new ArrayList<Producto>();
 		
 <<<<<<< HEAD
