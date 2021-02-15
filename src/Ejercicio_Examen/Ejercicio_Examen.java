@@ -5,8 +5,6 @@ package Ejercicio_Examen;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import Ejercicio1_Producto.Producto;
-
 
 public class Ejercicio_Examen {
 
