@@ -17,7 +17,7 @@ public class UD5_EjercicioA1 {
 		segundo.y=10;
 		
 		tercero.x=-3;
-		tercero.y=7;
+		tercero.y=5;
 		
 		System.out.println (primera.x + " " + primera.y);
 		

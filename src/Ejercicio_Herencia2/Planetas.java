@@ -1,5 +1,7 @@
 package Ejercicio_Herencia2;
 
+import java.util.ArrayList;
+
  class Planetas extends Astros {
 	
 	//Artributos de planetas
@@ -10,12 +12,17 @@ package Ejercicio_Herencia2;
 	
 	private boolean tiene_satelites;
 	
+	//ArrayList de satelites
+	
+	private ArrayList<Satelites> nombre_satelites = new ArrayList<Satelites>();
+	
 	//Constructor Super
 	
 	public Planetas () {
 		super();
 	}
 	
+	//Constructor con satelite
 	public Planetas(String nombre, double radio_ecuatorial, int rotacion_eje, int masa, double temp_media, double gravedad, double distancia_sol, double orbita_sol, boolean tiene_satelites) {
 		
 		super(nombre, radio_ecuatorial, rotacion_eje, masa, temp_media, gravedad);
@@ -26,7 +33,6 @@ package Ejercicio_Herencia2;
 		
 		this.tiene_satelites=tiene_satelites;
 	}
-
 	
 	//Getters y Setter
 	public double getDistancia_sol() {
@@ -52,20 +58,36 @@ package Ejercicio_Herencia2;
 	public void setTiene_satelites(boolean tiene_satelites) {
 		this.tiene_satelites = tiene_satelites;
 	}
-
+	
+	
+	//Metodo añadir satelites
+	public void aniadeSat (Satelites s) {
+		nombre_satelites.add(s);
+		this.tiene_satelites = true;
+	}
+	//To String
+	
 	@Override
 	public String toString() {
-		return "Planetas [distancia_sol=" + distancia_sol + ", orbita_sol=" + orbita_sol + ", tiene_satelites="
-				+ tiene_satelites + ", nombre=" + nombre + ", radio_ecuatorial=" + radio_ecuatorial + ", rotacion_eje="
-				+ rotacion_eje + ", masa=" + masa + ", temp_media=" + temp_media + ", gravedad=" + gravedad + "]";
+		return "Planetas [distancia_sol= " + distancia_sol + ", orbita_sol= " + orbita_sol + ", tiene_satelites= "
+				+ tiene_satelites +  ", nombre=" + nombre + ", radio_ecuatorial=" + radio_ecuatorial + ", rotacion_eje=" + rotacion_eje + ", masa=" + masa
+				+ ", temp_media=" + temp_media + ", gravedad=" + gravedad + ", nombre_satelites=" + nombre_satelites +"]";
 	}
 	
 	
-
-	//To String
-	
 	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 
 

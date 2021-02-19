@@ -52,6 +52,7 @@ public class Satelites extends Astros  {
 		this.nombre_planeta = nombre_planeta;
 	}
 
+	//To String
 	@Override
 	public String toString() {
 		return "Satelites [distancia_planeta=" + distancia_planeta + ", orbita_planetaria=" + orbita_planetaria
@@ -61,6 +62,7 @@ public class Satelites extends Astros  {
 	}
 
 	
-	//To String
+	
+	
 	
 }

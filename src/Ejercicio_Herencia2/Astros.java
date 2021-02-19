@@ -100,16 +100,19 @@ public class Astros {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
-	
-	//Metodo to String
+
 	@Override
 	public String toString() {
-		return "Astros [radio_ecuatorial=" + radio_ecuatorial + ", rotacion_eje=" + rotacion_eje + ", masa=" + masa
-				+ ", temp_media=" + temp_media + ", gravedad=" + gravedad + "]";
+		return "Astros [nombre=" + nombre + ", radio_ecuatorial=" + radio_ecuatorial + ", rotacion_eje=" + rotacion_eje
+				+ ", masa=" + masa + ", temp_media=" + temp_media + ", gravedad=" + gravedad + ", getClass()="
+				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 	
 	
+	//Metodo to String
+	
+	
+
 	
 	
 	
