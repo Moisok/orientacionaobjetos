@@ -43,7 +43,7 @@ public class CuentaBancaria {
 	}
 
 	/*Funcion para los ingresos*/
-	public void ingresos (float cantidad) {
+	public void ingresos (float cantidad) { 
 		this.saldo = this.saldo + cantidad;
 		this.movimientos[nMovimientos]=cantidad;
 		nMovimientos++;
