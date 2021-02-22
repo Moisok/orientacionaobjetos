@@ -4,15 +4,15 @@ public class canario extends aves {
 	
 	String color;
 	
-	String canta;
+	boolean canta;
 
 	//Constructor super
-	public canario(String nombre, int edad, String estado, String fechaNacimiento, String pico, boolean vuela, String color, String canta) {
+	public canario(String nombre, int edad, String estado, String fechaNacimiento, String pico, boolean vuela, String color, boolean canta) {
 		super(nombre, edad, estado, fechaNacimiento, pico, vuela);
 		
 		this.color=color;
 		
-		this.vuela=vuela;
+		this.canta=canta;
 	}
 	
 	//Metodos heredaros
@@ -26,6 +26,7 @@ public class canario extends aves {
 		System.out.println ("vuela: " + vuela);
 		System.out.println ("Color: " + color);
 		System.out.println ("Canta: " + canta);
+		System.out.println (" ");
 	}
 	
 	@Override
@@ -35,7 +36,7 @@ public class canario extends aves {
 	
 	@Override
 	public void volar() {
-		System.out.println ("¿Puede volar?" + vuela);
+		System.out.println ("ï¿½Puede volar?" + vuela);
 	}
 	
 	

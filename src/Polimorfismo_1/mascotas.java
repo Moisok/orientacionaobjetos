@@ -22,8 +22,6 @@ public abstract class mascotas {
 	
 	//Funcion de mostrar los datos
 	public abstract void muestra(); 
-		//Mostrar datos de las mascotas, estas heredaran los artributos de la clase
-		//Padre
 	
 	
 	//Funcion de hablar
@@ -41,5 +39,9 @@ public abstract class mascotas {
 		String morir=muerte;
 		return morir;
 	}
+
+	
+	
+	
 
 }

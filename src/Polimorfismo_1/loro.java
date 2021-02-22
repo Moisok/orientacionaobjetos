@@ -6,7 +6,7 @@ public class loro extends aves {
 	private String origen;
 
 	//Constructor
-	public loro(String nombre, int edad, String estado, String fechaNacimiento, String pico, boolean vuela) {
+	public loro(String nombre, int edad, String estado, String fechaNacimiento, String pico, boolean vuela, String origen) {
 		super(nombre, edad, estado, fechaNacimiento, pico, vuela);
 		
 		this.origen=origen;
@@ -32,6 +32,8 @@ public class loro extends aves {
 		System.out.println ("pico: " + pico);
 		System.out.println ("vuela: " + vuela);
 		System.out.println ("Origen: " + origen);
+		System.out.println (" ");
+		
 	}
 	
 	@Override

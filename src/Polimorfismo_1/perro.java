@@ -4,10 +4,10 @@ public class perro extends mascotas {
 	
 	private String raza;
 	
-	private int pulgas;
+	private boolean pulgas;
 	
 	//Constructor super
-	public perro(String nombre, int edad, String estado, String fechaNacimiento, String raza, int pulgas) {
+	public perro(String nombre, int edad, String estado, String fechaNacimiento, String raza, boolean pulgas) {
 		
 		super(nombre, edad, estado, fechaNacimiento);
 		
@@ -24,7 +24,7 @@ public class perro extends mascotas {
 	}
 
 
-	public int getPulgas() {
+	public boolean getPulgas() {
 		return pulgas;
 	}
 
@@ -34,7 +34,7 @@ public class perro extends mascotas {
 	}
 
 
-	public void setPulgas(int pulgas) {
+	public void setPulgas(boolean pulgas) {
 		this.pulgas = pulgas;
 	}
 	
@@ -47,12 +47,14 @@ public class perro extends mascotas {
 	//Funcion hederada de mostrar
 	@Override
 	public void muestra() {
+		
 		System.out.println ("Nombre: " + nombre);
 		System.out.println ("edad: " + edad);
 		System.out.println ("estado: " + estado);
 		System.out.println ("fechaNacimiento: " + fechaNacimiento);
 		System.out.println ("raza: " + raza);
 		System.out.println ("pulgas: " + pulgas);
+		System.out.println (" ");
 	}
 
 

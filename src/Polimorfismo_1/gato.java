@@ -52,6 +52,7 @@ public class gato extends mascotas{
 		System.out.println ("fechaNacimiento: " + fechaNacimiento);
 		System.out.println ("color: " + color);
 		System.out.println ("pelo largo: " + peloLargo);
+		System.out.println (" ");
 	}
 
 }
