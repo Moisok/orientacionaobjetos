@@ -29,6 +29,10 @@ public abstract class CuentaBancaria {
 		return saldo;
 	}
 	
+	public int getInteresAnualBasico (int interesAnualBasico) {
+		return interesAnualBasico;
+	}
+	
 	
 	/*Actualizar el saldo*/
 	private void aniadir (int cantidad) {

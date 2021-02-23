@@ -12,9 +12,9 @@ public class CuentaCorriente extends CuentaBancaria {
 	//Calcular intereses
 		@Override
 		public void calcularintereses() {
-			double intereses = getSaldo*(interesAnualBasico/100);
-			System.out.println ("interesAnualBasico: " + interesAnualBasico);
-			System.out.println ("intereses: " + intereses);
+			double intereses1 = saldo*interesAnualBasico;
+			double intereses2 = intereses1/100;
+			System.out.println ("intereses: " + intereses2);
 		}
 	//Mostrar datos de cuenta
 	@Override

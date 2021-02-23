@@ -27,9 +27,20 @@ public class Main_banco {
 		cuenta1.mostrar();
 		cuenta2.mostrar();
 		
+		//Ahora volvemos a traspasa de la cuenta de ahorros a la corriente
+		cuenta2.transpaso(300, cuenta1);
+		cuenta1.mostrar();
+		cuenta2.mostrar();
+		
 		//Calculamos intereses
 		cuenta1.calcularintereses();
 		cuenta2.calcularintereses();
+		
+		//Ahora ingresamos dinero en la cuenta de ahorros para calcular otra vez los itnereses y mostramos
+		cuenta2.ingresar(560);
+		cuenta2.calcularintereses();
+		
+	
 
 	}
 

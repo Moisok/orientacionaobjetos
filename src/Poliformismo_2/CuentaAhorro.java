@@ -2,7 +2,7 @@ package Poliformismo_2;
 
 public class CuentaAhorro extends CuentaBancaria {
 	//Constantes
-	private final int saldoMinimo = 100;
+	private final int saldoMinimo = 950;
 	
 	//Contructor
 	
@@ -15,14 +15,15 @@ public class CuentaAhorro extends CuentaBancaria {
 	//Calcular intereses
 		@Override
 		public void calcularintereses() {
-			double intereses;
-			if (saldoMinimo > 500) {
-			intereses = saldo*(interesAnualBasico/100);
-			System.out.println ("intereses: " + intereses);
+			if (saldoMinimo > 950) {
+			double intereses1 = saldo*interesAnualBasico;
+			double intereses2 = intereses1/100;
+			System.out.println ("intereses: " + intereses2);
 			}
 			else {
-			intereses = saldo*(interesAnualBasico/50);
-			System.out.println ("intereses: " + intereses);
+			double intereses1 = saldo*interesAnualBasico;
+			double intereses2 = intereses1/50;
+			System.out.println ("intereses: " + intereses2);
 			}
 		}
 		@Override
