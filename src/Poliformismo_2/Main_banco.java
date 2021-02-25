@@ -26,7 +26,7 @@ public class Main_banco {
 		cuenta1.transpaso(300, cuenta2);
 		cuenta1.mostrar();
 		cuenta2.mostrar();
-		
+		System.out.println (" ");
 		//Ahora volvemos a traspasa de la cuenta de ahorros a la corriente
 		cuenta2.transpaso(300, cuenta1);
 		cuenta1.mostrar();
