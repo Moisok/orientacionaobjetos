@@ -57,6 +57,7 @@ public class empresa {
 			brutos += empleado.getSueldo();
 		}
 		System.out.println ("La suma de todos los brutos es de: " + brutos);
+		System.out.println ("La suma de todos los brutos anuales es de: " + brutos*12);
 	}
 	
 	//Calcular todos los netos
@@ -66,6 +67,7 @@ public class empresa {
 			netos += empleado.calcular_sal();
 		}
 		System.out.println ("La suma de todos los netos es de: " + netos);
+		System.out.println ("La suma de todos los netos anuales es de: " + netos*12);
 	}
 
 	

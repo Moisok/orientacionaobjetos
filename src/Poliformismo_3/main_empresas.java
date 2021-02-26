@@ -48,9 +48,11 @@ public class main_empresas {
 		System.out.println (" ");
 		comp.mostrarEmpleados();
 		
-		//Calcular neto de pepito
+		//Calcular netos
 		System.out.println (" ");
-		System.out.println ("El juego neto anual de juanito es de: " + juanito.calcular_sal());
+		System.out.println ("El sueldo neto mensual de juanito es de: " + juanito.calcular_sal());
+		System.out.println ("El sueldo neto mensual de pepito es de: " + pepito.calcular_sal());
+		System.out.println ("El sueldo neto mensual de menganito es de: " + menganito.calcular_sal());
 		
 		//Mostrar suma todos los brutos
 		System.out.println (" ");

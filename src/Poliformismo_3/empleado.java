@@ -68,13 +68,13 @@ public class empleado {
 		double anual = sueldo * 12;
 		double neto = 0;
 		if (anual < 12000) {
-			neto=sueldo-(anual*0.20);
+			neto=sueldo-(sueldo*0.20);
 		}
-		if (anual > 12000 && anual < 25000) {
-			neto=sueldo-(anual*0.30);
+		if (anual >= 12000) {
+			neto=sueldo-(sueldo*0.30);
 		}
 		if (anual > 25000) {
-			neto=sueldo-(anual*0.40);
+			neto=sueldo-(sueldo*0.40);
 		}
 		return neto;
 		
