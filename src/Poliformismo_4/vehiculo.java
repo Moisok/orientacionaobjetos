@@ -11,8 +11,23 @@ public abstract class vehiculo {
 		this.matricula=matricula;
 		this.modelo=modelo;
 	}
+	
+	//Getter de modelo y matricula
+	
+	public String getMatricula() {
+		return matricula;
+	}
+
+	public String getModelo() {
+		return modelo;
+	}
+	
 
 	//Metodos a heredar
 	public abstract void imprimir_datos();
+	
+	public abstract boolean validar_matricula ();
+
+	
 
 }

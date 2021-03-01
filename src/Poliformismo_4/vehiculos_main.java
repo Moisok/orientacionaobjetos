@@ -13,11 +13,12 @@ public class vehiculos_main {
 		ArrayList <vehiculo> listado = new ArrayList <vehiculo>();
 		
 		//Creamos vehiculos
-		coche nissan = new coche ("3287R","Nissan", 4, false);
-		moto kawasaki = new moto ("4567I","Kawasaki",2,"verde");
-		submarino lowcost = new submarino ("4567U","Lowcost",25,1000);
-		avion boing747 = new avion ("8987TTT", "Boing747",500,74);
-		helicoptero apache = new helicoptero ("65678HHH","Apache",2,4);
+		
+		coche nissan = new coche ("3287RGH","Nissan", 4, false);
+		moto kawasaki = new moto ("4567D","Kawasaki",2,"verde");
+		submarino lowcost = new submarino ("GFHJKIUJHY","Lowcost",25,1000);
+		avion boing747 = new avion ("TTTA987654", "Boing747",500,74);
+		helicoptero apache = new helicoptero ("JHG87656","Apache",2,4);
 		
 		
 		//insertamos vehiculos en el arraylist
@@ -32,6 +33,20 @@ public class vehiculos_main {
 		
 		for (vehiculo vehiculo : listado) {
 			vehiculo.imprimir_datos();
+		}
+		
+		System.out.println (" ");
+		
+		//Validamos matriculas
+		
+		for (vehiculo vehiculo : listado) {
+			System.out.println (" ");
+			if (vehiculo.validar_matricula()) {
+				System.out.println ("La matricula de " + vehiculo.getModelo() + " con matricula " + vehiculo.getMatricula() + " es valida");
+			}
+			else {
+				System.out.println ("ERROR: la matricula de " + vehiculo.getModelo() + " con matricula " + vehiculo.getMatricula() + " no es valida");
+			}
 		}
 		
 	}

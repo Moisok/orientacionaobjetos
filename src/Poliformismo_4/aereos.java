@@ -13,9 +13,10 @@ public class aereos extends vehiculo {
 	}
 	
 	//Metodo para validar la matricula
-	/*public boolean validar_matricula () {
-		matricula = this.matricula;
-		if (matricula.matches("^[0-9]{4}\\[A-Za-z]{3}")) {
+	@Override
+	public boolean validar_matricula () {
+		validar_matricula= this.validar_matricula;
+		if (matricula.matches("^[A-Za-z]{4}[0-9]{6}")) {
 			validar_matricula = true;
 		}
 		else {
@@ -23,8 +24,7 @@ public class aereos extends vehiculo {
 		}
 		
 		return validar_matricula;
-		
-	}*/
+	}
 	
 	
 	//Metodos heredados
