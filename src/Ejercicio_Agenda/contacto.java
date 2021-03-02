@@ -1,12 +1,12 @@
 package Ejercicio_Agenda;
 
-public class contacto {
+public abstract class contacto {
 
 	//Metodos de contacto
 	
-	private String nombre;
+	protected String nombre;
 	
-	private int telefono;
+	protected int telefono;
 	
 	//Constructor
 
@@ -34,6 +34,9 @@ public class contacto {
 	public void setTelefono () {
 		this.telefono=telefono;
 	}
+	
+	//Metodos a heredar
+	public abstract String toString ();
 	
 	
 }

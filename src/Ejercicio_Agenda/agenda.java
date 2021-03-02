@@ -25,11 +25,7 @@ public class agenda {
 		for (contacto x : agenda_contactos) {
 			//Se recorre todos los elementos de la lista y se compara el bojeto con el otro
 			if (cont.getNombre().equals(x.getNombre())){
-				
 				repetido = true;
-			}
-			else {
-				repetido = false;
 			}
 		}
 		return repetido;
@@ -37,14 +33,11 @@ public class agenda {
 	
 	//Eliminar contacto (si el nombre esta, lo elimina si no no se ha encontrado)
 	public boolean eliminarContacto (String nombre) {
-				boolean elimina = false;
+		boolean elimina = false;
 		for (contacto x : agenda_contactos) {
 			//Se recorre todos los elementos de la lista y se compara el bojeto con el otro
 			if (nombre.equals(x.getNombre())){
 				elimina = true;
-			}
-			else {
-				elimina = false;
 			}
 		}
 		return elimina;
@@ -56,9 +49,8 @@ public class agenda {
 		for (contacto contacto : agenda_contactos) {
 			if (nombre.equals(contacto.getNombre())) {
 				existe = true;
-			}
-			else {
-				existe = false;
+				//System.out.println (existe);
+				
 			}
 		}
 		return existe;
@@ -68,14 +60,18 @@ public class agenda {
 	//To string de contactos
 	public void mostrar() {
 		for (contacto contacto : agenda_contactos) {
-			System.out.println ("Nombre: " + contacto.getNombre() + " telfono: " + contacto.getTelefono());
+			System.out.println(contacto.toString());
 		}
 	}
 	
 	//Buscar contacto
 	public int buscarContacto (String nombre) {
-		
-		return agenda_contactos.indexOf(nombre);
-			
+		int posicion = 0;
+		for (contacto contacto: agenda_contactos) {
+			if (nombre.equals(contacto.getNombre())) {
+				posicion = agenda_contactos.indexOf(contacto);
+			}
+		}
+		return posicion;
 		}
 }
