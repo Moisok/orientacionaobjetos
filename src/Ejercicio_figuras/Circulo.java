@@ -35,7 +35,6 @@ public class Circulo implements iFigura2D {
 	@Override
 	public void escalar(double escala) {
 		radio = radio * escala;
-		
 	}
 
 	//Mostrar los datos

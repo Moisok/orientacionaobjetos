@@ -43,6 +43,7 @@ public class ProgramaFiguras_Main {
 			iFigura2D.area();
 		}
 		
+		System.out.println ("=== AJUSTAR TAMAÑO DE LAS FIGURAS x2 ===");
 		System.out.println ("==========================================");
 		System.out.println ("==========================================");
 		System.out.println ("==========================================");
@@ -64,6 +65,7 @@ public class ProgramaFiguras_Main {
 					iFigura2D.area();
 				}
 				
+		System.out.println ("=== AJUSTAR TAMAÑO DE LAS FIGURAS x0,1 ===");
 		System.out.println ("==========================================");
 		System.out.println ("==========================================");
 		System.out.println ("==========================================");		
